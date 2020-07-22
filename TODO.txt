@@ -1,0 +1,221 @@
+
+	
+CODE CLEANUP
+[W1] Remove in system defines and allow engine parameters to specify the values
+[ ] Encapsulate SDL
+[ ] Figure out how to keep OpenGL usage clean and replaceable by directx... May require a port to figure it out
+[ ] Final resource library
+[ ] Get rid of old code
+[W1] Make all code use engine types
+[W1] Add namespace to engine
+[ ] Test compilation of game with real as double and float
+[ ] Check everything for proper return codes
+[W1] Add _ms and _s to all time related variables
+[ ] System for quitting out of game (look for exit()'s
+[ ] Test object cleanup and ref counting system heavily
+[W1] Create separate game loop that OGE.cpp can subclass from
+
+MEMORY
+[ ] mempool classes
+[ ] allocation classes
+[W2] remove use of new and malloc (can use in place new)
+[W2] Add memory tracking and leak detection
+[W2] Are refcounted destructors ever being called?
+
+CONTROLS
+[ ] Implement remainder of keyboard input support
+[ ] Add bounds checking for buttons and other input indexes
+[ ] Support just pressed for keystrokes and buttons
+[ ] Fix rotation application so it applies against fvec of object, not fixed angles
+
+MATH
+[W1] Move to Vector4's and 4x4 Mats
+[W1] Get matrix44 up to snuff. Should allow easy setting
+[W1] Create transform class?
+[ ] Change Vector3.h to vector.h and vector3 {}
+
+CAMERA
+[ ] Implement chase and other fun camera types
+
+COLLADA
+[ ] Get data into triangle lists
+
+GAMEOBJECTS
+[ ] Implement game objects system with properties
+
+PHYSICS
+[W3] Add in physics system
+
+ANIMATION
+[ ] Support animation bone rig
+[ ] Support skinning
+[ ] Play animations on any mesh
+[ ] Animation drives movement via ik
+
+PLATFORMS
+[ ] Port to 360
+
+RENDERING
+http://www.evl.uic.edu/aej/594/lecture03.html
+[ ] How to calculate position from depth buffer and pixel coordinates?? (http://www.gamedev.net/community/forums/topic.asp?topic_id=461471)
+[ ] Pass in far clip to properly calculate float packing
+[3] Write lighting shader for deferred pass
+	[ ] Shadow mapping (bind shadow texture, figure out worldtoshadow matrix)?
+	[ ] Screen space Ambient Occlusion
+	[ ] Global illumination
+	[ ] BRDF
+	
+	[ ] Normal map support
+	[ ] Specular map support?
+	
+	[ ] Stencil and other optimizations
+	[ ] Anti-aliasing (blur)
+	[ ] Bloom
+	[ ] HDR
+	[ ] DoF
+	[ ] Fog
+
+	[x] Spot light
+	[x] Direction light
+	[x] Point light
+	[x] Have texture load its data not material
+	[ ] bmp mapping support
+	[ ] Render out material id
+[ ] Put framebuffer textures into texture class (need texture create with id as argument, no data)
+	
+[ ] Create particle system
+[ ] Get dynamic meshes instances working with render blocks...
+[ ] Add in culling (z-pre pass, HOM?)
+[ ] How to handle one to one loading where texture data may be stored in a non-malloc'd area...
+[ ] Bucketize by material/mesh? - Wait until I have a bottleneck
+
+GAME
+[ ] Add in space ship with controls (create game object class)
+[ ] Move objects into scene
+
+INTERFACE
+[ ] Add in font support
+[ ] Create interface_lib
+[ ] Implement console
+
+SHARE
+[ ] Set up drupal
+[ ] Set up bugzilla
+[ ] Set up viewcvs
+[ ] setup doxygen
+
+--- COMPLETED ----
+CODE CLEANUP
+[x] Add in frametime
+[x] Add in support for asserts
+[x] Make mesh const
+[x] Make it so mesh and mesh instance format and type cannot be interchanged - (Can't solve without making a struct or class. Bad for cache performance)
+[x] Make reference counted object template that can take array allocator as allocator
+[x] Add engine types real, uint32, etc..
+[x] Add in lights to renderer
+
+CAMERA
+[x] Write camera class
+
+COLLADA
+[x] Load Collada mesh
+[x] Load complex mesh
+	[x] Traverse visual scene for geometries and allocate them
+	[x] Add them to mesh with local transforms stored
+	[x] Get rid of local transforms and pre-transform them
+[x] Load textures and map them with uv's
+[x] Load material name and data
+[x] Fix color bug in car.dae
+[x] Load meta data
+
+CONTROLS
+[x] Hook up joystick
+[x] Input library should queue keys instead of storing values
+[x] Move process_events SDL stuff into input_event and get rid of input_event_private.h
+[x] How to handle just pressed and just released after a frame... (clear them each frame?)
+[x] Write input_lib
+[x] Implement joystick input support
+
+MEMORY
+[x] Implement reference counting support
+[x] Implement simple array slot based allocator
+
+RENDERING
+[x] Move material texture into material and support cleanup of opengl texture resources
+[x] Fix z fighting in rendering data
+[x] Generate mipmaps for textures
+[x] Switch rendering to shader
+[x] Add in support for render blocks for a mesh
+[X] Add support for deferred shading
+[x] fbo class
+[x] Add in shader support for textures
+[x] Shader class
+[x] Support multiple shaders in renderer
+[x] Instance materials and shaders
+[x] Support removal of mesh instance from renderer
+	[x] Render out texture color
+	[x] Render out position
+	[x] Render out normal
+	[x] Render out depth
+	[x] Ambient Light
+	[x] Pass in eye direction
+	[x] support specular
+	[x] Z pre-pass (depth 1 - doom thing?)
+	
+
+
+MISC?
+[x] Figure out how to do mesh instancing
+[X] Dump compound objects out to obj files in Nicks game
+[x] Write resource loader and finder for meshes
+[x] Figure out how to render position of mesh instances (where pos/orient data, and
+	whether to do flat or hierchical rendering.
+	[x] Add scaling (mesh)
+	[x] Add rotation (mesh)
+[x] Re-create Nick's city
+
+
+GBUFFER
+DP (Depth 3Bytes, Stencil 1)
+RTO (Lighting Accumulation RGB 3 Bytes, Intensity 1)
+RT1 (Normal X 2, Normal Y 2)
+RT2 (Diffuse Albedo RGB 3 Bytes, Alpha? 1)
+
+Normal z = sqrt(1.0f - X^2 - y^2)
+
+
+vec4 tmp1   = ftransform();
+   gl_Position = tmp1;
+
+
+// Predivide out w to avoid perspective-correct interpolation.
+    // The quantities being interpolated are screen-space texture 
+    // coordinates and vectors to the near and far shadow plane,
+    // all of which have to be bilinearly interpolated.
+    // This could potentially be done by setting glHint,
+    // but it wouldn't be guaranteed to work on all hardware.
+
+    gl_Position.xyz /= gl_Position.w;
+    gl_Position.w = 1.0;
+
+    // Grab the transformed vertex's XY components as a texcoord
+    // for sampling from the depth texture from pass 1.
+    // Normalize them from [0,0] to [1,1]
+
+    depth_texture_coord = gl_Position.xy * 0.5 + 0.5;
+
+    // offset = vector to vertex from camera's position
+    vec3 offset = (gl_Vertex.xyz / gl_Vertex.w) - camera_position;
+
+    // z = distance from vertex to camera plane
+    float z = -dot(offset, camera_direction);
+
+    vec3 shadowOffsetNear = offset * depth_near / z;
+    vec3 shadowOffsetFar  = offset * depth_far / z;
+
+    vec3 worldPositionNear = camera_position + shadowOffsetNear;
+    vec3 worldPositionFar  = camera_position + shadowOffsetFar;
+
+    vec3 shadowFar  = world_to_shadow * (worldPositionFar - sphere_origin);
+    shadow_near = world_to_shadow * (worldPositionNear - sphere_origin);
+    shadow_direction  = shadowFar - shadow_near;

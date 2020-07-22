@@ -1,0 +1,26 @@
+uniform vec3 light_position;
+uniform vec4 light_ambient;
+uniform vec4 light_diffuse;
+uniform vec4 light_specular;
+
+uniform sampler2D color_texture;
+uniform sampler2D normal_texture;
+uniform sampler2D depth_texture;
+//uniform sampler2D shadow_map_texture;
+
+uniform vec3 camera_position;
+uniform vec3 camera_direction;
+
+//uniform mat3 world_to_shadow;
+//uniform vec3 sphere_origin;
+
+//varying vec4 position;
+
+
+void main()
+{
+	// get pixel color coord
+	gl_TexCoord[0] = gl_MultiTexCoord0;
+	gl_Position = ftransform();
+	//position = gl_Position;
+}

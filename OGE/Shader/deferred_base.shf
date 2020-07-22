@@ -1,0 +1,46 @@
+uniform sampler2D base_texture;	
+varying vec3 normal;
+
+varying vec3 position_view;
+varying vec4 position_proj;
+
+uniform vec4 light_position;
+uniform vec4 light_diffuse;
+uniform vec4 light_ambient;
+
+const float val = 255.0;
+
+inline vec2 EncodeFloatRG8( float v ) {
+	return vec2(floor(v * val) / val, floor(fract(v * val) * val) / val);
+}
+
+inline vec3 EncodeFloatRGB8( float v ) {
+	return vec3(floor(v * val) / val, floor(fract(v * val) * val) / val, floor(fract(v * val * val) * val) / val);
+}
+
+inline float EncodeFloatR8( float v ) {
+	return floor(v * val) / val;
+}
+
+
+void main()
+{	
+	// Get texture color						
+	vec4 albedo = texture2D(base_texture, gl_TexCoord[0].st);
+	
+	// Add in ambient term
+	// Set final fragment color
+	gl_FragData[0] = albedo;
+	
+	// Store the normal
+	vec3 orig_norm = normalize(normal);
+	
+	vec2 nx = EncodeFloatRG8((orig_norm.x / 2.0) + 0.5);
+	vec2 ny = EncodeFloatRG8((orig_norm.y / 2.0) + 0.5);
+	vec2 nz = EncodeFloatRG8((orig_norm.z / 2.0) + 0.5);
+	
+	gl_FragData[1] = vec4(nx, ny);
+	gl_FragData[2] = vec4(EncodeFloatRGB8(position_proj.z / position_proj.w), 1.0);
+
+	gl_FragData[3] = vec4(nz, 0.0, 0.0);
+}

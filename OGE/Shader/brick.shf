@@ -1,0 +1,44 @@
+varying vec4 diffuse,ambient;
+varying vec3 normal,lightDir,halfVector;
+varying vec2 texture_coordinate;
+
+varying vec3 eyeVec;
+varying float att;
+
+uniform sampler2D base_texture;	
+
+void main()
+{
+
+	vec4 final_color = (gl_LightSource[0].diffuse * gl_FrontMaterial.diffuse * att) +
+						(gl_LightSource[0].ambient * gl_FrontMaterial.ambient * att);
+						
+	final_color += gl_LightModel.ambient * gl_FrontMaterial.ambient;
+						
+	vec4 color = texture2D(base_texture, gl_TexCoord[0].st);
+	
+	final_color += color;
+	
+						
+	vec3 N = normalize(normal);
+	vec3 L = normalize(lightDir);
+	
+	float lambertTerm = dot(N, L);
+	
+	if (lambertTerm > 0.0) {
+		final_color += gl_LightSource[0].diffuse * gl_FrontMaterial.diffuse * lambertTerm * att;
+		
+		vec3 E = normalize(eyeVec);
+		vec3 R = reflect(-L, N);
+		
+		float specular = pow(max(dot(R, E), 0.0), gl_FrontMaterial.shininess);
+		final_color += gl_LightSource[0].specular * gl_FrontMaterial.specular * specular * att;
+	}
+
+	
+	/*vec4 final_color = gl_FrontMaterial.diffuse + gl_FrontMaterial.ambient + gl_FrontMaterial.specular;*/
+
+	//gl_FragColor = final_color;
+	gl_FragData[0] = final_color;
+	//gl_FragData[0] = vec4(1.0, 0.0, 0.0, 1.0);
+}

@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA version="1.4.0" xmlns="http://www.collada.org/2005/11/COLLADASchema">
+	<asset>
+		<contributor>
+			<author>Illusoft Collada 1.4.0 plugin for Blender - http://colladablender.illusoft.com</author>
+			<authoring_tool>Blender v:244 - Illusoft Collada Exporter v:0.3.146</authoring_tool>
+			<comments></comments>
+			<copyright></copyright>
+			<source_data>file://&lt;memory&gt;</source_data>
+		</contributor>
+		<created>2007-07-21T18:24:48.417000</created>
+		<modified>2007-07-21T18:24:48.417000</modified>
+		<unit meter="0.01" name="centimeter"/>
+		<up_axis>Z_UP</up_axis>
+	</asset>
+	<library_cameras>
+		<camera id="Camera-Camera" name="Camera-Camera">
+			<optics>
+				<technique_common>
+					<perspective>
+						<yfov>49.13434</yfov>
+						<znear>0.1</znear>
+						<zfar>100.0</zfar>
+					</perspective>
+				</technique_common>
+			</optics>
+		</camera>
+	</library_cameras>
+	<library_effects>
+		<effect>
+			<profile_COMMON>
+				<technique sid="blender">
+					<phong>
+						<emission>
+							<color>0.00000 0.00000 0.00000 1</color>
+						</emission>
+						<ambient>
+							<color>0.40000 0.40000 0.40000 1</color>
+						</ambient>
+						<diffuse>
+							<color>0.80000 0.80000 0.80000 1</color>
+						</diffuse>
+						<specular>
+							<color>0.50000 0.50000 0.50000 1</color>
+						</specular>
+						<shininess>
+							<float>12.5</float>
+						</shininess>
+						<reflective>
+							<color>1.00000 1.00000 1.00000 1</color>
+						</reflective>
+						<reflectivity>
+							<float>0.8</float>
+						</reflectivity>
+						<transparent>
+							<color>1 1 1 1</color>
+						</transparent>
+						<transparency>
+							<float>0.0</float>
+						</transparency>
+					</phong>
+				</technique>
+			</profile_COMMON>
+		</effect>
+	</library_effects>
+	<library_lights>
+		<light id="Spot" name="Spot">
+			<technique_common>
+				<point>
+					<color>1.00000 1.00000 1.00000</color>
+					<constant_attenuation>0.0</constant_attenuation>
+					<linear_attenuation>0.0</linear_attenuation>
+					<quadratic_attenuation>0.0</quadratic_attenuation>
+				</point>
+			</technique_common>
+		</light>
+	</library_lights>
+	<library_materials>
+		<material id="Material" name="Material">
+			<instance_effect url="#"/>
+		</material>
+	</library_materials>
+	<library_geometries>
+		<geometry id="Cone_001-Geometry" name="Cone_001-Geometry">
+			<mesh>
+				<source id="Cone_001-Geometry-Position">
+					<float_array count="102" id="Cone_001-Geometry-Position-array">0.70275 3.33504 0.19467 0.82712 3.18351 0.19467 0.91953 3.01062 0.19467 0.97643 2.82303 0.19467 0.99565 2.62794 0.19467 0.97643 2.43285 0.19467 0.91953 2.24525 0.19467 0.82712 2.07237 0.19467 0.70275 1.92083 0.19467 0.55122 1.79647 0.19467 0.37833 1.70406 0.19467 0.19074 1.64715 0.19467 -0.00435 1.62794 0.19467 -0.19944 1.64715 0.19467 -0.38704 1.70406 0.19467 -0.55992 1.79647 0.19467 -0.71146 1.92083 0.19467 -0.83582 2.07237 0.19467 -0.92823 2.24526 0.19467 -0.98514 2.43285 0.19467 -1.00435 2.62794 0.19467 -0.98514 2.82303 0.19467 -0.92823 3.01062 0.19467 -0.83582 3.18351 0.19467 -0.71146 3.33505 0.19467 -0.55992 3.45941 0.19467 -0.38703 3.55182 0.19467 -0.19944 3.60872 0.19467 -0.00435 3.62794 0.19467 0.19074 3.60872 0.19467 0.37833 3.55182 0.19467 0.55122 3.45941 0.19467 -0.00435 2.62794 2.19467 -0.00435 2.62794 0.19467</float_array>
+					<technique_common>
+						<accessor count="34" source="#Cone_001-Geometry-Position-array" stride="3">
+							<param type="float" name="X"></param>
+							<param type="float" name="Y"></param>
+							<param type="float" name="Z"></param>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Cone_001-Geometry-Normals">
+					<float_array count="192" id="Cone_001-Geometry-Normals-array">0.69207 0.56796 0.44549 0.78957 0.42204 0.44549 0.85674 0.25989 0.44549 0.89098 0.08775 0.44549 0.89098 -0.08775 0.44549 0.85674 -0.25989 0.44549 0.78957 -0.42204 0.44549 0.69207 -0.56796 0.44549 0.56796 -0.69207 0.44549 0.42204 -0.78957 0.44549 0.25989 -0.85674 0.44549 0.08775 -0.89098 0.44549 -0.08775 -0.89098 0.44549 -0.25989 -0.85674 0.44549 -0.42204 -0.78957 0.44549 -0.56796 -0.69207 0.44549 -0.69207 -0.56796 0.44549 -0.78957 -0.42203 0.44549 -0.85674 -0.25989 0.44549 -0.89098 -0.08775 0.44549 -0.89098 0.08775 0.44549 -0.85674 0.25989 0.44549 -0.78957 0.42204 0.44549 -0.69207 0.56797 0.44549 -0.56796 0.69207 0.44549 -0.42203 0.78957 0.44549 -0.25989 0.85674 0.44549 -0.08775 0.89098 0.44549 0.08776 0.89098 0.44549 0.25989 0.85674 0.44549 0.42204 0.78957 0.44549 0.56796 0.69207 0.44549 0.00000 0.00000 -1.00000 0.00000 0.00000 -1.00000 0.00000 0.00000 -1.00000 0.00000 0.00000 -1.00000 0.00000 0.00000 -1.00000 0.00000 0.00000 -1.00000 0.00000 0.00000 -1.00000 0.00000 0.00000 -1.00000 0.00000 0.00000 -1.00000 0.00000 0.00000 -1.00000 0.00000 0.00000 -1.00000 0.00000 0.00000 -1.00000 0.00000 0.00000 -1.00000 0.00000 0.00000 -1.00000 0.00000 0.00000 -1.00000 0.00000 0.00000 -1.00000 0.00000 0.00000 -1.00000 0.00000 0.00000 -1.00000 0.00000 0.00000 -1.00000 0.00000 -0.00000 -1.00000 0.00000 -0.00000 -1.00000 0.00000 -0.00000 -1.00000 0.00000 -0.00000 -1.00000 0.00000 -0.00000 -1.00000 0.00000 -0.00000 -1.00000 0.00000 -0.00000 -1.00000 0.00000 -0.00000 -1.00000 0.00000 -0.00000 -1.00000 0.00000 0.00000 -1.00000 0.00000 0.00000 -1.00000 0.00000 0.00000 -1.00000 0.00000 0.00000 -1.00000</float_array>
+					<technique_common>
+						<accessor count="64" source="#Cone_001-Geometry-Normals-array" stride="3">
+							<param type="float" name="X"></param>
+							<param type="float" name="Y"></param>
+							<param type="float" name="Z"></param>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Cone_001-Geometry-Vertex">
+					<input semantic="POSITION" source="#Cone_001-Geometry-Position"/>
+				</vertices>
+				<triangles count="64">
+					<input offset="0" semantic="VERTEX" source="#Cone_001-Geometry-Vertex"/>
+					<input offset="1" semantic="NORMAL" source="#Cone_001-Geometry-Normals"/>
+					<p>1 0 0 0 32 0 32 1 2 1 1 1 32 2 3 2 2 2 32 3 4 3 3 3 32 4 5 4 4 4 32 5 6 5 5 5 32 6 7 6 6 6 32 7 8 7 7 7 32 8 9 8 8 8 32 9 10 9 9 9 32 10 11 10 10 10 32 11 12 11 11 11 32 12 13 12 12 12 32 13 14 13 13 13 32 14 15 14 14 14 32 15 16 15 15 15 32 16 17 16 16 16 32 17 18 17 17 17 32 18 19 18 18 18 32 19 20 19 19 19 32 20 21 20 20 20 32 21 22 21 21 21 32 22 23 22 22 22 32 23 24 23 23 23 32 24 25 24 24 24 32 25 26 25 25 25 32 26 27 26 26 26 32 27 28 27 27 27 32 28 29 28 28 28 32 29 30 29 29 29 32 30 31 30 30 30 32 31 0 31 31 31 33 32 0 32 1 32 33 33 1 33 2 33 33 34 2 34 3 34 33 35 3 35 4 35 33 36 4 36 5 36 33 37 5 37 6 37 33 38 6 38 7 38 33 39 7 39 8 39 33 40 8 40 9 40 33 41 9 41 10 41 33 42 10 42 11 42 33 43 11 43 12 43 33 44 12 44 13 44 33 45 13 45 14 45 33 46 14 46 15 46 33 47 15 47 16 47 33 48 16 48 17 48 33 49 17 49 18 49 33 50 18 50 19 50 33 51 19 51 20 51 33 52 20 52 21 52 33 53 21 53 22 53 33 54 22 54 23 54 33 55 23 55 24 55 33 56 24 56 25 56 33 57 25 57 26 57 33 58 26 58 27 58 33 59 27 59 28 59 33 60 28 60 29 60 33 61 29 61 30 61 33 62 30 62 31 62 31 63 0 63 33 63</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Cone-Geometry" name="Cone-Geometry">
+			<mesh>
+				<source id="Cone-Geometry-Position">
+					<float_array count="102" id="Cone-Geometry-Position-array">0.10340 3.27941 -1.00000 0.22777 3.12787 -1.00000 0.32018 2.95498 -1.00000 0.37708 2.76739 -1.00000 0.39630 2.57230 -1.00000 0.37708 2.37721 -1.00000 0.32018 2.18962 -1.00000 0.22777 2.01673 -1.00000 0.10340 1.86519 -1.00000 -0.04813 1.74083 -1.00000 -0.22102 1.64842 -1.00000 -0.40861 1.59152 -1.00000 -0.60370 1.57230 -1.00000 -0.79879 1.59152 -1.00000 -0.98639 1.64842 -1.00000 -1.15927 1.74083 -1.00000 -1.31081 1.86519 -1.00000 -1.43517 2.01673 -1.00000 -1.52758 2.18962 -1.00000 -1.53021 2.35105 -1.12308 -1.60370 2.57230 -1.00000 -1.58449 2.76739 -1.00000 -1.52758 2.95499 -1.00000 -1.43517 3.12787 -1.00000 -1.31081 3.27941 -1.00000 -1.15927 3.40377 -1.00000 -0.98639 3.49618 -1.00000 -0.79879 3.55309 -1.00000 -0.60370 3.57230 -1.00000 -0.40861 3.55309 -1.00000 -0.22102 3.49618 -1.00000 -0.04813 3.40377 -1.00000 -0.92671 2.78365 0.79266 -0.68269 2.44238 -1.53669</float_array>
+					<technique_common>
+						<accessor count="34" source="#Cone-Geometry-Position-array" stride="3">
+							<param type="float" name="X"></param>
+							<param type="float" name="Y"></param>
+							<param type="float" name="Z"></param>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Cone-Geometry-Normals">
+					<float_array count="192" id="Cone-Geometry-Normals-array">0.65709 0.53926 0.52672 0.73658 0.39371 0.54996 0.78641 0.23855 0.56979 0.80651 0.07943 0.58585 0.79767 -0.07856 0.59795 0.76122 -0.23091 0.60599 0.69890 -0.37357 0.60991 0.61271 -0.50284 0.60971 0.50494 -0.61527 0.60538 0.37819 -0.70755 0.59695 0.23555 -0.77649 0.58445 0.08067 -0.81906 0.56800 -0.08200 -0.83257 0.54782 -0.24719 -0.81489 0.52427 -0.40880 -0.76481 0.49794 -0.56007 -0.68245 0.46965 -0.69398 -0.56953 0.44049 -0.80370 -0.42958 0.41174 -0.94898 0.18128 0.25801 -0.80694 -0.46828 0.35995 -0.93508 0.09210 0.34227 -0.90364 0.27412 0.32909 -0.83481 0.44622 0.32246 -0.73163 0.60043 0.32281 -0.59883 0.72968 0.33010 -0.44264 0.82813 0.34389 -0.27044 0.89153 0.36336 -0.09036 0.91749 0.38735 0.08920 0.90566 0.41450 0.26020 0.85775 0.44336 0.41546 0.77727 0.47249 0.54917 0.66917 0.50063 0.32957 0.27047 -0.90456 0.37943 0.20281 -0.90272 0.41701 0.12650 -0.90005 0.44074 0.04341 -0.89659 0.44918 -0.04424 -0.89234 0.44117 -0.13383 -0.88739 0.41589 -0.22230 -0.88183 0.37311 -0.30620 -0.87580 0.31332 -0.38179 -0.86952 0.23795 -0.44517 -0.86325 0.14944 -0.49263 -0.85732 0.05131 -0.52092 -0.85206 -0.05197 -0.52769 -0.84784 -0.15525 -0.51179 -0.84497 -0.25308 -0.47348 -0.84366 -0.34022 -0.41456 -0.84403 -0.41211 -0.33821 -0.84604 -0.46524 -0.24868 -0.84954 -0.30579 -0.58039 -0.75474 -0.44322 0.31882 -0.83780 -0.49769 0.04902 -0.86597 -0.46796 0.14195 -0.87228 -0.42137 0.22523 -0.87848 -0.36090 0.29618 -0.88432 -0.28971 0.35301 -0.88963 -0.21095 0.39466 -0.89429 -0.12761 0.42066 -0.89820 -0.04246 0.43107 -0.90132 0.04198 0.42627 -0.90362 0.12343 0.40688 -0.90510 0.19978 0.37376 -0.90575 0.26911 0.32791 -0.90557</float_array>
+					<technique_common>
+						<accessor count="64" source="#Cone-Geometry-Normals-array" stride="3">
+							<param type="float" name="X"></param>
+							<param type="float" name="Y"></param>
+							<param type="float" name="Z"></param>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Cone-Geometry-Vertex">
+					<input semantic="POSITION" source="#Cone-Geometry-Position"/>
+				</vertices>
+				<triangles count="64">
+					<input offset="0" semantic="VERTEX" source="#Cone-Geometry-Vertex"/>
+					<input offset="1" semantic="NORMAL" source="#Cone-Geometry-Normals"/>
+					<p>1 0 0 0 32 0 32 1 2 1 1 1 32 2 3 2 2 2 32 3 4 3 3 3 32 4 5 4 4 4 32 5 6 5 5 5 32 6 7 6 6 6 32 7 8 7 7 7 32 8 9 8 8 8 32 9 10 9 9 9 32 10 11 10 10 10 32 11 12 11 11 11 32 12 13 12 12 12 32 13 14 13 13 13 32 14 15 14 14 14 32 15 16 15 15 15 32 16 17 16 16 16 32 17 18 17 17 17 32 18 19 18 18 18 32 19 20 19 19 19 32 20 21 20 20 20 32 21 22 21 21 21 32 22 23 22 22 22 32 23 24 23 23 23 32 24 25 24 24 24 32 25 26 25 25 25 32 26 27 26 26 26 32 27 28 27 27 27 32 28 29 28 28 28 32 29 30 29 29 29 32 30 31 30 30 30 32 31 0 31 31 31 33 32 0 32 1 32 33 33 1 33 2 33 33 34 2 34 3 34 33 35 3 35 4 35 33 36 4 36 5 36 33 37 5 37 6 37 33 38 6 38 7 38 33 39 7 39 8 39 33 40 8 40 9 40 33 41 9 41 10 41 33 42 10 42 11 42 33 43 11 43 12 43 33 44 12 44 13 44 33 45 13 45 14 45 33 46 14 46 15 46 33 47 15 47 16 47 33 48 16 48 17 48 33 49 17 49 18 49 33 50 18 50 19 50 33 51 19 51 20 51 33 52 20 52 21 52 33 53 21 53 22 53 33 54 22 54 23 54 33 55 23 55 24 55 33 56 24 56 25 56 33 57 25 57 26 57 33 58 26 58 27 58 33 59 27 59 28 59 33 60 28 60 29 60 33 61 29 61 30 61 33 62 30 62 31 62 31 63 0 63 33 63</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Cube-Geometry" name="Cube-Geometry">
+			<mesh>
+				<source id="Cube-Geometry-Position">
+					<float_array count="24" id="Cube-Geometry-Position-array">1.00000 1.00000 -1.00000 1.00000 -1.00000 -1.00000 -1.00000 -1.00000 -1.00000 -1.00000 1.00000 -1.00000 1.00000 1.00000 1.00000 1.00000 -1.00000 1.00000 -1.00000 -1.00000 1.00000 -1.00000 1.00000 1.00000</float_array>
+					<technique_common>
+						<accessor count="8" source="#Cube-Geometry-Position-array" stride="3">
+							<param type="float" name="X"></param>
+							<param type="float" name="Y"></param>
+							<param type="float" name="Z"></param>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Cube-Geometry-Normals">
+					<float_array count="18" id="Cube-Geometry-Normals-array">0.00000 0.00000 -1.00000 0.00000 0.00000 1.00000 1.00000 -0.00000 0.00000 -0.00000 -1.00000 -0.00000 -1.00000 0.00000 -0.00000 0.00000 1.00000 0.00000</float_array>
+					<technique_common>
+						<accessor count="6" source="#Cube-Geometry-Normals-array" stride="3">
+							<param type="float" name="X"></param>
+							<param type="float" name="Y"></param>
+							<param type="float" name="Z"></param>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Cube-Geometry-Vertex">
+					<input semantic="POSITION" source="#Cube-Geometry-Position"/>
+				</vertices>
+				<triangles count="12" material="Material">
+					<input offset="0" semantic="VERTEX" source="#Cube-Geometry-Vertex"/>
+					<input offset="1" semantic="NORMAL" source="#Cube-Geometry-Normals"/>
+					<p>0 0 1 0 2 0 2 0 3 0 0 0 4 1 7 1 6 1 6 1 5 1 4 1 0 2 4 2 5 2 5 2 1 2 0 2 1 3 5 3 6 3 6 3 2 3 1 3 2 4 6 4 7 4 7 4 3 4 2 4 4 5 0 5 3 5 3 5 7 5 4 5</p>
+				</triangles>
+			</mesh>
+		</geometry>
+	</library_geometries>
+	<library_visual_scenes>
+		<visual_scene id="Scene" name="Scene">
+			<node layer="L1" id="Cone_001" name="Cone_001">
+				<translate sid="translate">-1.46247 1.22108 -2.52453</translate>
+				<rotate sid="rotateZ">0 0 1 118.04228</rotate>
+				<rotate sid="rotateY">0 1 0 -21.53958</rotate>
+				<rotate sid="rotateX">1 0 0 102.04725</rotate>
+				<scale sid="scale">1.07940 1.07940 1.07940</scale>
+				<instance_geometry url="#Cone_001-Geometry"/>
+			</node>
+			<node layer="L1" id="Cone" name="Cone">
+				<translate sid="translate">0.35601 2.60583 -1.14836</translate>
+				<rotate sid="rotateZ">0 0 1 0.00000</rotate>
+				<rotate sid="rotateY">0 1 0 0.00000</rotate>
+				<rotate sid="rotateX">1 0 0 -151.54185</rotate>
+				<scale sid="scale">1.00000 1.00000 1.00000</scale>
+				<instance_geometry url="#Cone-Geometry"/>
+			</node>
+			<node layer="L1" id="Cube" name="Cube">
+				<translate sid="translate">-0.14436 0.01312 0.00000</translate>
+				<rotate sid="rotateZ">0 0 1 0.00000</rotate>
+				<rotate sid="rotateY">0 1 0 0.00000</rotate>
+				<rotate sid="rotateX">1 0 0 0.00000</rotate>
+				<scale sid="scale">1.00000 1.00000 1.00000</scale>
+				<instance_geometry url="#Cube-Geometry">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Material" target="#Material">
+								<bind_vertex_input input_semantic="TEXCOORD" input_set="1" semantic="CHANNEL1"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+			</node>
+			<node layer="L1" id="Lamp" name="Lamp">
+				<translate sid="translate">4.07625 1.00545 5.90386</translate>
+				<rotate sid="rotateZ">0 0 1 106.93632</rotate>
+				<rotate sid="rotateY">0 1 0 3.16371</rotate>
+				<rotate sid="rotateX">1 0 0 37.26105</rotate>
+				<scale sid="scale">1.00000 1.00000 1.00000</scale>
+				<instance_light url="#Spot"/>
+			</node>
+			<node layer="L1" id="Camera" name="Camera">
+				<translate sid="translate">7.48113 -6.50764 5.34367</translate>
+				<rotate sid="rotateZ">0 0 1 46.69194</rotate>
+				<rotate sid="rotateY">0 1 0 0.61977</rotate>
+				<rotate sid="rotateX">1 0 0 63.55930</rotate>
+				<scale sid="scale">1.00000 1.00000 1.00000</scale>
+				<instance_camera url="#Camera-Camera"/>
+			</node>
+		</visual_scene>
+	</library_visual_scenes>
+	<library_physics_models>
+		<physics_model id="Scene-PhysicsModel" name="Scene-PhysicsModel"/>
+	</library_physics_models>
+	<scene>
+		<instance_visual_scene url="#Scene"/>
+	</scene>
+</COLLADA>

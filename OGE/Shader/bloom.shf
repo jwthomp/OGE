@@ -1,0 +1,15 @@
+uniform sampler2D color_texture;
+uniform sampler2D normal_map;
+uniform float pixel_size;
+uniform float weight;
+
+
+void main()
+{											
+	vec4 color = texture2D(color_texture, gl_TexCoord[0].st);
+	vec4 normal4 = texture2D(normal_texture, gl_TexCoord[0].st);
+
+	
+
+	gl_FragData[0] = 0.0;
+}

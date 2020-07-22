@@ -1,0 +1,5 @@
+void main()
+{
+	// Transform the position
+	gl_Position = ftransform();
+}

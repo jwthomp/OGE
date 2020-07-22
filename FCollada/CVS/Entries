@@ -1,0 +1,26 @@
+/Copyright.txt/1.1.1.1/Wed Jun 27 01:39:12 2007//
+/DLLEntry.cpp/1.1.1.1/Wed Jun 27 01:39:12 2007//
+/FCollada.cpp/1.1.1.1/Wed Jun 27 01:39:12 2007//
+/FCollada.h/1.1.1.1/Wed Jun 27 01:39:12 2007//
+/FCollada.html/1.1.1.1/Wed Jun 27 01:39:12 2007//
+/FCollada.sln/1.1.1.1/Wed Jun 27 01:39:12 2007//
+/FCollada.suo/1.2/Wed Jun 27 01:43:06 2007//
+/FCollada.vcproj/1.1.1.1/Wed Jun 27 01:39:12 2007//
+/FCollada.vcproj.THQINC.jeff.thompson.user/1.1.1.1/Wed Jun 27 01:39:12 2007//
+/FColladaPlugin.cpp/1.1.1.1/Wed Jun 27 01:39:12 2007//
+/FColladaPlugin.h/1.1.1.1/Wed Jun 27 01:39:12 2007//
+/Pre-requisites and License.rtf/1.1.1.1/Wed Jun 27 01:39:12 2007//
+/Sconscript/1.1.1.1/Wed Jun 27 01:39:12 2007//
+/Sconstruct/1.1.1.1/Wed Jun 27 01:39:12 2007//
+/StdAfx.cpp/1.1.1.1/Wed Jun 27 01:39:12 2007//
+/StdAfx.h/1.1.1.1/Wed Jun 27 01:39:12 2007//
+/connectionmap.xml/1.1.1.1/Wed Jun 27 01:39:12 2007//
+/connections.xml/1.1.1.1/Wed Jun 27 01:39:12 2007//
+/settings.xml/1.1.1.1/Wed Jun 27 01:39:12 2007//
+D/FCDocument////
+D/FCollada.xcodeproj////
+D/FColladaTest////
+D/FMath////
+D/FUtils////
+D/LibXML////
+D/Output////

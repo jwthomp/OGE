@@ -1,0 +1,1 @@
+Very old project that I used to learn a bit more about rendering. Built a simple deferred rendering engine. Whether it work today is dubious. There is likely dead code and partially implemented features. 

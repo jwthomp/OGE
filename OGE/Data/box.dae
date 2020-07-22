@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+    <asset>
+        <contributor>
+            <authoring_tool>MilkShape 3D 1.8.1a</authoring_tool>
+            <source_data>file://C:/Documents and Settings/jeff.thompson/Desktop/box.ms3d</source_data>
+        </contributor>
+        <created>2007-05-21T20:10:16Z</created>
+        <modified>2007-05-21T20:10:16Z</modified>
+        <unit meter="1.000000" name="meter" />
+        <up_axis>Y_UP</up_axis>
+    </asset>
+    <library_images>
+        <image id="Material01-image" name="Material01-image">
+            <init_from>invalid.png</init_from>
+        </image>
+    </library_images>
+    <library_materials>
+        <material id="Material01" name="Material01">
+            <instance_effect url="#Material01-effect" />
+        </material>
+    </library_materials>
+    <library_effects>
+        <effect id="Material01-effect" name="Material01-effect">
+            <profile_COMMON>
+                <newparam sid="Material01-image-surface">
+                    <surface type="2D">
+                        <init_from>Material01-image</init_from>
+                        <format>A8R8G8B8</format>
+                    </surface>
+                </newparam>
+                <newparam sid="Material01-image-sampler">
+                    <sampler2D>
+                        <source>Material01-image-surface</source>
+                        <minfilter>LINEAR_MIPMAP_LINEAR</minfilter>
+                        <magfilter>LINEAR</magfilter>
+                    </sampler2D>
+                </newparam>
+                <technique sid="common">
+                    <phong>
+                        <emission>
+                            <color>0.000000 0.000000 0.000000 1.000000</color>
+                        </emission>
+                        <ambient>
+                            <color>0.200000 0.200000 0.200000 1.000000</color>
+                        </ambient>
+                        <diffuse>
+                            <texture texture="Material01-image-sampler" texcoord="" />
+                        </diffuse>
+                        <specular>
+                            <color>0.000000 0.000000 0.000000 1.000000</color>
+                        </specular>
+                        <shininess>
+                            <float>0.000000</float>
+                        </shininess>
+                        <reflective>
+                            <color>1.000000 1.000000 1.000000 1.000000</color>
+                        </reflective>
+                        <reflectivity>
+                            <float>1.000000</float>
+                        </reflectivity>
+                        <transparent opaque="A_ONE">
+                            <color>0.000000 0.000000 0.000000 1.000000</color>
+                        </transparent>
+                        <transparency>
+                            <float>1.000000</float>
+                        </transparency>
+                        <index_of_refraction>
+                            <float>0.000000</float>
+                        </index_of_refraction>
+                    </phong>
+                </technique>
+            </profile_COMMON>
+        </effect>
+    </library_effects>
+    <library_geometries>
+        <geometry id="Box01-geometry" name="Box01-geometry">
+            <mesh>
+                <source id="Box01-positions" name="position">
+                    <float_array id="Box01-positions-array" count="24">-34 29 32 -34 -34 32 30 29 32 30 -34 32 30 29 -32 30 -34 -32 -34 29 -32 -34 -34 -32</float_array>
+                    <technique_common>
+                        <accessor source="#Box01-positions-array" count="8" stride="3">
+                            <param name="X" type="float" />
+                            <param name="Y" type="float" />
+                            <param name="Z" type="float" />
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="Box01-normals" name="normal">
+                    <float_array id="Box01-normals-array" count="18">0 0 1 1 0 0 0 0 -1 -1 0 0 0 1 0 0 -1 0</float_array>
+                    <technique_common>
+                        <accessor source="#Box01-normals-array" count="6" stride="3">
+                            <param name="X" type="float" />
+                            <param name="Y" type="float" />
+                            <param name="Z" type="float" />
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="Box01-texcoords" name="texcoord">
+                    <float_array id="Box01-texcoords-array" count="8">0 1 0 0 1 1 1 0</float_array>
+                    <technique_common>
+                        <accessor source="#Box01-texcoords-array" count="4" stride="2">
+                            <param name="S" type="float" />
+                            <param name="T" type="float" />
+                        </accessor>
+                    </technique_common>
+                </source>
+                <vertices id="Box01-geometry-vertices">
+                    <input semantic="POSITION" source="#Box01-positions" />
+                </vertices>
+                <triangles material="Material01" count="12">
+                    <input semantic="VERTEX" source="#Box01-geometry-vertices" offset="0" />
+                    <input semantic="NORMAL" source="#Box01-normals" offset="1" />
+                    <input semantic="TEXCOORD" source="#Box01-texcoords" offset="2" />
+                    <p>0 0 0 1 0 1 2 0 2 1 0 1 3 0 3 2 0 2 2 1 0 3 1 1 4 1 2 3 1 1 5 1 3 4 1 2 4 2 0 5 2 1 6 2 2 5 2 1 7 2 3 6 2 2 6 3 0 7 3 1 0 3 2 7 3 1 1 3 3 0 3 2 6 4 0 0 4 1 4 4 2 0 4 1 2 4 3 4 4 2 1 5 0 7 5 1 3 5 2 7 5 1 5 5 3 3 5 2</p>
+                </triangles>
+            </mesh>
+        </geometry>
+    </library_geometries>
+    <library_visual_scenes>
+        <visual_scene id="SceneRoot" name="SceneRoot">
+            <node id="Box01" name="Box01" type="NODE">
+                <instance_geometry url="#Box01-geometry">
+                    <bind_material>
+                        <technique_common>
+                            <instance_material symbol="Material01" target="#Material01" />
+                        </technique_common>
+                    </bind_material>
+                </instance_geometry>
+            </node>
+        </visual_scene>
+    </library_visual_scenes>
+    <scene>
+        <instance_visual_scene url="#SceneRoot" />
+    </scene>
+</COLLADA>

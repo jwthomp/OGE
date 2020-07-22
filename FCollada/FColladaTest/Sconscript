@@ -1,0 +1,49 @@
+#Sconscript for FColladaTest executable for Linux
+#by Veronique Laforte, Feb. 9th, 2007
+
+#Create the Environment which creates the compile and linker command lines.
+env = Environment()
+
+#Add the compiler and linker flags and include search path
+env.Append(CPPPATH = ['../../../', '../../../../', '../../../../LibXML/include/'])
+
+#Add the macros defined for all the builds
+env.Append(CPPDEFINES = ['LINUX', '_DEBUG'])
+env.Append(CCFLAGS = ['-O0', '-g'])
+
+#Unicode is pre-requisite to building the test for FCollada.
+env.Append(CPPDEFINES = ['UNICODE'])
+
+#Make a list of the library to link with first and where to find it.
+libs = ['FColladaSUD', 'dl']
+        
+#List the source file to compile into the executable.
+list = Split("""FCTestExportImport/FCTEIAnimation.cpp
+                FCTestExportImport/FCTEICamera.cpp
+                FCTestExportImport/FCTEIEmitter.cpp
+                FCTestExportImport/FCTEIExtra.cpp
+                FCTestExportImport/FCTEIGeometry.cpp
+                FCTestExportImport/FCTEILight.cpp
+                FCTestExportImport/FCTEIMaterial.cpp
+                FCTestExportImport/FCTEIPhysics.cpp
+                FCTestExportImport/FCTEIVisualScene.cpp
+                FCTestExportImport/FCTestExportImport.cpp
+                FCTestXRef/FCTestXRef.cpp
+                FCTestXRef/FCTestXRefAcyclic.cpp
+                FCTestXRef/FCTestXRefSimple.cpp
+                FCTestXRef/FCTestXRefTree.cpp
+                FCTestAssetManagement/FCTAMCrossCloning.cpp
+                FCTestAssetManagement/FCTAssetManagement.cpp
+                FCTest.cpp
+                FCTestGeometryPolygonsTools.cpp
+				FCTestController.cpp
+				FCTestSceneGraph.cpp
+                FCTestAnimation.cpp""")
+
+path = ('../../../../Output')
+
+#Finally, create the executable.
+FColladaTest = env.Program('FColladaTest', list, LIBS=libs, LIBPATH=path)
+
+#Specifying the name and directory of output executable
+env.InstallAs('../../../', FColladaTest)

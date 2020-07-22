@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<kml xmlns='http://earth.google.com/kml/2.1'>
+<Folder>
+    <name>Stonehenge3</name>
+    <description><![CDATA[Created with <a href="http://sketchup.google.com/">Google SketchUp 6.4.112</a>]]></description>
+    <DocumentSource>SketchUp</DocumentSource>
+<visibility>1</visibility>
+<LookAt>
+<heading>268.649</heading>
+<tilt>72.3106</tilt>
+<latitude>51.17884666141769</latitude>
+<longitude>-1.825603967737536</longitude>
+<range>47.89133513207421</range>
+<altitude>15.03142948321527</altitude>
+</LookAt>
+<Folder>
+<name>Tour</name>
+<Placemark>
+<name>Camera</name>
+<visibility>1</visibility>
+<LookAt>
+<heading>268.649</heading>
+<tilt>72.3106</tilt>
+<latitude>51.17884666141769</latitude>
+<longitude>-1.825603967737536</longitude>
+<range>47.89133513207421</range>
+<altitude>15.03142948321527</altitude>
+</LookAt>
+</Placemark>
+</Folder>
+  <Placemark>
+    <name>Model</name>
+    <description><![CDATA[]]></description>
+    <Style id='default'>
+    </Style>
+    <Model>
+        <altitudeMode>relativeToGround</altitudeMode>
+        <Location>
+            <longitude>-1.826218736401</longitude>
+            <latitude>51.178834640920</latitude>
+            <altitude>0.000000000000</altitude>
+        </Location>
+        <Orientation>
+            <heading>0</heading>
+            <tilt>0</tilt>
+            <roll>0</roll>
+        </Orientation>
+        <Scale>
+            <x>1.0</x>
+            <y>1.0</y>
+            <z>1.0</z>
+        </Scale>
+        <Link>
+            <href>models/Stonehenge3.dae</href>
+        </Link>
+    </Model>
+  </Placemark></Folder>
+</kml>
